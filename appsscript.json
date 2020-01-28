@@ -1,0 +1,15 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "NCMB",
+      "libraryId": "1yWnb7GfYsBCR-MZvi6r-TOYv_y-AV4le5P7kaG5B3iZ5VNnSk9Q55pSJ",
+      "version": "31"
+    }]
+  },
+  "webapp": {
+    "access": "ANYONE_ANONYMOUS",
+    "executeAs": "USER_DEPLOYING"
+  },
+  "exceptionLogging": "STACKDRIVER"
+}
