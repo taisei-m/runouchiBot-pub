@@ -139,7 +139,16 @@ function doPost(e) {
          oruka_mas(reply_token);
       }
      ///////////////////////////////////////////通知設定
-      else if(keyword == "通知on/off"){   
+      else if (keyword == "通知on/off") {   
+        
+        var setting_message = "";
+        var notify_sleep = get_sleep(userId);
+        if(notify_sleep == "true"){
+          setting_message = "端末がビーコンに反応するとメッセージで通知します。\n現在の設定：OFF";
+        } else if(notify_sleep =="false") {
+          setting_message = "端末がビーコンに反応するとメッセージで通知します。\n現在の設定：ON";
+        }
+        
         var url = 'https://api.line.me/v2/bot/message/reply';
         return UrlFetchApp.fetch(url, {
     'headers': {
@@ -170,7 +179,7 @@ function doPost(e) {
       }
     ],
     "title": "通知設定",
-    "text": "端末がビーコンに反応するとメッセージで通知します。"
+    "text": setting_message
   }
 },
       ],
