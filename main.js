@@ -1,11 +1,11 @@
 //linebotと繋ぐ
-var CHANNEL_ACCESS_TOKEN = 'oihbvUe4mKqXVghUJjlK3rULvpZsJMXCkSIqNsxnknzDh8cf5Eb3c6niT6BkL7Czty4HRU+XUEmRQmDaVFTlt62Z3zSUX2MqLEV5y7ptVCVx3QiHKaaEF/5cmXS244NUG4XN6/PRqrr8YYfU9dhkVwdB04t89/1O/w1cDnyilFU='; 
+var CHANNEL_ACCESS_TOKEN = 'YOUR_CHANNEL_ACCESS_TOKEN'; 
 
 //spreadsheetsにjsonのログをとる
 function outputLog(data) {
-  var id = "1EB_0ArEeH5RRpFZSQpAc3cwz4gYqQ2iXctVAP2xJr2Q";  
+  var id = "YOUR_ID";  
   var spreadSheet = SpreadsheetApp.openById(id);  
-  var sheetName = "シート1";
+  var sheetName = "YOUR_sheetName";
   spreadSheet.getSheetByName(sheetName).appendRow(
     [new Date(), data]
   );
@@ -13,8 +13,8 @@ function outputLog(data) {
 
 
 //ニフクラの設定
-var application_key = "b472d2ab52ea8c125dd824e2f2da7a3804263d15dd8ae9c2abfab01546e2ca4c";
-var client_key = "1c6e63f8db4776114481fbc1129ab2cc59f3bf0e2faa1d0eb48e83be32cbf1d6";
+var application_key = "YOUR_application_key";
+var client_key = "YOUR_client_key";
 var ncmb = NCMB.init(application_key, client_key);
 var Test = ncmb.DataStore("test");
 var Master = ncmb.DataStore("master");
@@ -63,7 +63,7 @@ function doPost(e) {
       set_beacon_data(beacon_hwid, userId, display_name);
       sleep = get_sleep(userId);
       set_beacon_data_log(beacon_hwid, userId, display_name); 
-      push_userId = "U2012df34792adf4ce94b2b36d669bd59"
+      push_userId = "your_userId"
       
       if(sleep == "false"){////////////////////////////////////beaconに反応したときに通知するかどうか
          reply_message = 'ビーコンに反応したよ';
