@@ -62,8 +62,6 @@
      //    var m1 = JSON.stringify(push_message_ylab);
   var url = 'https://api.line.me/v2/bot/message/push';
   reply1(CHANNEL_ACCESS_TOKEN, reply_token, message);
- 
-//  "U2012df34792adf4ce94b2b36d669bd59",
 }        
 
 
@@ -78,11 +76,11 @@ try{
   Person.equalTo("exist_room","true")
   var items = Person.fetchAll();
   for(var i=0; i<items.length; i++){
-    if(items[i].fields.userId !== "U2012df34792adf4ce94b2b36d669bd59"){
-      if(items[i].fields.hwid == "012c669b82"){
+    if(items[i].fields.userId !== "your_userId"){
+      if(items[i].fields.hwid == "YOUR_hwid1"){
         reply_message_ylab += "\n" + items[i].fields.display_name;
       }
-      if(items[i].fields.hwid == "000002b868"){
+      if(items[i].fields.hwid == "YOUR_hwid2"){
         reply_message_house += "\n" + items[i].fields.display_name;
       }
     }
@@ -97,7 +95,7 @@ try{
    return;
  }
     
-//  "U2012df34792adf4ce94b2b36d669bd59",
+//  "your_userId",
 }          
   
 function push_exist_room(){
@@ -109,11 +107,11 @@ try{
   Person.equalTo("exist_room","true")
   var items = Person.fetchAll();
   for(var i=0; i<items.length; i++){
-    if(items[i].fields.userId !== "U2012df34792adf4ce94b2b36d669bd59"){
-      if(items[i].fields.hwid == "012c669b82"){
+    if(items[i].fields.userId !== "your_userId"){
+      if(items[i].fields.hwid == "YOUR_hwid1"){
         push_message_ylab += items[i].fields.display_name + '\n';
       }
-      if(items[i].fields.hwid == "000002b868"){
+      if(items[i].fields.hwid == "YOUR_hwid2"){
         push_message_house += items[i].fields.display_name + '\n';
       }
     }
@@ -121,14 +119,14 @@ try{
     var m1 = JSON.stringify(push_message_ylab);
     var m2 = JSON.stringify(push_message_house);
   var url = 'https://api.line.me/v2/bot/message/push';
-  var push_userId = "U2012df34792adf4ce94b2b36d669bd59";
+  var push_userId = "your_userId";
   push2(CHANNEL_ACCESS_TOKEN,  m1, m2);
  }catch(e){
    outputLog(e);
    return;
  }
     
-//  "U2012df34792adf4ce94b2b36d669bd59",
+//  "your_userId",
 }        
      
 
@@ -240,7 +238,7 @@ function reply3(CHANNEL_ACCESS_TOKEN, reply_token, m1, m2, m3){
         }
   
   function push1(CHANNEL_ACCESS_TOKEN, userId, m1){
-   push_userId = "U2012df34792adf4ce94b2b36d669bd59"
+   push_userId = "your_userId"
    var url = 'https://api.line.me/v2/bot/message/push';
     UrlFetchApp.fetch(url, {
     'headers': {
@@ -259,7 +257,7 @@ function reply3(CHANNEL_ACCESS_TOKEN, reply_token, m1, m2, m3){
         }
   
   function push2(CHANNEL_ACCESS_TOKEN, m1, m2){
-   push_userId = "U2012df34792adf4ce94b2b36d669bd59"
+   push_userId = "your_userId"
    var url = 'https://api.line.me/v2/bot/message/push';
     UrlFetchApp.fetch(url, {
     'headers': {
