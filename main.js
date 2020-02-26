@@ -79,6 +79,7 @@ function doPost(e) {
          m1 = get_fool_name(userId) + "\nが入室しました"     ///来た人のみ
          outputLog(m1);
          set_notify_enter_false(userId);
+         push1(CHANNEL_ACCESS_TOKEN,push_userId,m1);
             
         
          count_all_userId = get_count_all_userId(); 
